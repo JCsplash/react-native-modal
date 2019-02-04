@@ -105,8 +105,8 @@ class ReactNativeModal extends Component {
   state = {
     showContent: true,
     isVisible: false,
-    deviceWidth: Dimensions.get("window").width,
-    deviceHeight: Dimensions.get("window").height,
+    deviceWidth: Dimensions.get("screen").width,
+    deviceHeight: Dimensions.get("screen").height,
     isSwipeable: this.props.swipeDirection ? true : false,
     pan: null
   };
@@ -316,8 +316,8 @@ class ReactNativeModal extends Component {
     if (!this.props.deviceHeight && !this.props.deviceWidth) {
       // Here we update the device dimensions in the state if the layout changed
       // (triggering a render)
-      const deviceWidth = Dimensions.get("window").width;
-      const deviceHeight = Dimensions.get("window").height;
+      const deviceWidth = Dimensions.get("screen").width;
+      const deviceHeight = Dimensions.get("screen").height;
       if (
         deviceWidth !== this.state.deviceWidth ||
         deviceHeight !== this.state.deviceHeight
